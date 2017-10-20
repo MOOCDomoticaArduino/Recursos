@@ -34,21 +34,21 @@ void setup() {
 // Bucle que se repite
 void loop() {
   
-  // Estado nocturno
-  digitalWrite(ledPorchePin,HIGH); // Encendemos el porche
-  delay(duracionPorche);
-  digitalWrite(ledPorchePin,LOW);// Apagamos el porche
-  
   // Estado diurno
+  
   digitalWrite(ledSalonPin,HIGH); // Encendemos el salon
-  digitalWrite(ledCocinaPin,HIGH);// Encendemos la cocina
-  delay(duracionSalonCocina);
-  digitalWrite(ledSalonPin,LOW);  // Apagamos el salon
-  digitalWrite(ledCocinaPin,LOW); // Apagamos la cocina
-  
-  // Estado Atardecer
-  
-  digitalWrite(ledJardinPin,HIGH);// Encendemos el jardin
-  delay(duracionJardin);
+  digitalWrite(ledPorchePin,LOW); // Apagamos el porche
   digitalWrite(ledJardinPin,LOW); // Apagamos el jardin
+
+  
+  delay(duracionPorche);  //Esperamos hasta el siguiente estado
+
+
+  // Estado atardecer
+
+
+  // Estado nocturno
+
+
+  
 }
