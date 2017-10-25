@@ -4,51 +4,57 @@
 
  Realizamos una secuencia iluminando las distintas habitaciones de la casa
 
- Porche: Led Rojo pin 11
- Salon: Led Azul pin 8
- Cocina:  Led Azul  pin 5
- Jardin:  Led Verde  pin 2
+ Dormitorio: Led Rojo   pin 11
+ Salon:      Led Azul   pin 8
+ Cocina:     Led Azul   pin 5
+ Entrada:    Led Verde  pin 2
  */
 
 // declaracion de variables 
+
 // Conexiones
-int  ledPorchePin=11; // LED que simula la luz del porche
-int  ledSalonPin=8; // LED que simula la luz del salon
-int  ledCocinaPin=5; // LED que simula la luz del cocina
-int  ledJardinPin=2; // LED que simula la luz del jardin
+const int  ledDormitorioPin=11; // LED que simula la luz del dormitorio
+const int  ledSalonPin=8;       // LED que simula la luz del salon
+const int  ledCocinaPin=5;      // LED que simula la luz de la cocina
+const int  ledEntradaPin=2;     // LED que simula la luz de la entrada 
 
 // Tiempo entre pasos
-int duracionPorche=1000;  // Tiempo que estara encendido el porche
-int duracionSalonCocina=2000;  // Tiempo que estara encendido el salon y la cocina
-int duracionJardin=500;  // Tiempo que estara encendido el jardin
+int duracionTarde=1000;         // Duracion del estado Tarde
+int duracionNoche=2000;         // Duracion del estado Noche
+int duracionMadrugada=500;      // Duracion del estado Madrugada
 
 // Configuración 
 void setup() {
   // configuramos los pines como salidas
-  pinMode(ledPorchePin,OUTPUT);
+  pinMode(ledDormitorioPin,OUTPUT);
   pinMode(ledSalonPin,OUTPUT);
   pinMode(ledCocinaPin,OUTPUT);
-  pinMode(ledJardinPin,OUTPUT);
+  pinMode(ledEntradaPin,OUTPUT);
 }
 
 // Bucle que se repite
 void loop() {
   
-  // Estado diurno
+  // ESTADO TARDE
   
-  digitalWrite(ledSalonPin,HIGH); // Encendemos el salon
-  digitalWrite(ledPorchePin,LOW); // Apagamos el porche
-  digitalWrite(ledJardinPin,LOW); // Apagamos el jardin
-
+  digitalWrite(ledSalonPin,HIGH);     // Encendemos el salon
+  digitalWrite(ledCocinaPin,HIGH);    // Encendemos el salon
+  digitalWrite(ledDormitorioPin,LOW); // Apagamos el dormitorio
+  digitalWrite(ledEntradaPin,LOW);    // Apagamos la entrada
   
-  delay(duracionPorche);  //Esperamos hasta el siguiente estado
+  delay(duracionTarde);   //Esperamos hasta el siguiente estado
 
 
-  // Estado atardecer
+  // ESTADO NOCHE
 
+                                      // Apagamos Salon
+                                      // Apagamos Cocina
+                                      // Encendemos Dormitorio
+                                      // Apagamos Entrada
 
-  // Estado nocturno
+                          // Esperamos  hasta el siguiente estado   
+    
+  // ESTADO MADRUGADA
 
-
-  
+    // ....
 }
